@@ -12,7 +12,7 @@ user = api.get_user('your_username') # just for testing
 recognizer = sr.Recognizer()
 
 with sr.Microphone() as source_audio:
-    audio_data = recognizer.record(source_audio, duration=10)
+    audio_data = recognizer.record(source_audio, duration=10) # say your message in 10 seconds
  
     text = recognizer.recognize_google(audio_data)
     print(text)
