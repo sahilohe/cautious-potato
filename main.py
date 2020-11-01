@@ -17,7 +17,7 @@ with sr.Microphone() as source_audio:
     text = recognizer.recognize_google(audio_data)
     print(text)
     
-    send_it_or_not = input("Do you want to send it? ")
+    send_it_or_not = input("Do you want to post it? ")
     
     if send_it_or_not.lower() == 'yes':
       api.update_status(f'"{text}"\n\nVia Tweepy (Python Automation)')
