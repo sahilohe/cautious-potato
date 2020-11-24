@@ -1,4 +1,5 @@
 import tweepy
+import os, time
 import speech_recognition as sr
 
 auth = tweepy.OAuthHandler("your_API_key", "your_API_secret")
@@ -19,6 +20,11 @@ with sr.Microphone() as source_audio: # pip3 install pyaudio, sudo apt install j
     
     if send_it_or_not.lower() == 'yes':
       api.update_status(f'"{text}"\n\nVia Tweepy (Python Automation)')
+      print("Let's check")
+      time.sleep(1)
+      print("Going to twitter.com")
+      os.system("firefox twitter.com")
+      
     elif send_it_or_not.lower() == 'no':
       print("Exiting the program")
       exit()      
